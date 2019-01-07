@@ -356,11 +356,6 @@
 						"version": "[parameters('firmware')]"
 					},
 					"osDisk": {
-						"name": "[variables('osDiskName')]",
-						"vhd": {
-							"uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName')), '2016-01-01').primaryEndpoints.blob, 'vhds/', variables('osDiskName'), '.vhd')]"
-						},
-						"caching": "ReadWrite",
 						"createOption": "FromImage"
 					}
 				},
