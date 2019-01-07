@@ -176,7 +176,7 @@
 		"osDiskName": "[concat(parameters('vmName'), '-', 'wafosdisk', '-', uniquestring(parameters('vmName')))]"
 	},
 	"resources": [{
-			"apiVersion": "2016-01-01",
+			"apiVersion": "2017-03-30",
 			"type": "Microsoft.Storage/storageAccounts",
 			"name": "[parameters('storageAccountName')]",
 			"location": "[parameters('location')]",
@@ -191,7 +191,7 @@
 			}
 		},
 		{
-			"apiVersion": "2016-06-01",
+			"apiVersion": "2017-03-30",
 			"type": "Microsoft.Network/virtualNetworks",
 			"name": "[variables('vNETName')]",
 			"location": "[parameters('location')]",
@@ -221,7 +221,7 @@
 			}
 		},
 		{
-			"apiVersion": "2016-06-01",
+			"apiVersion": "2017-03-30",
 			"type": "Microsoft.Network/publicIPAddresses",
 			"name": "[parameters('publicIPAddressName')]",
 			"location": "[parameters('location')]",
@@ -237,7 +237,7 @@
 			}
 		},
 		{
-			"apiVersion": "2015-06-15",
+			"apiVersion": "2017-03-30",
 			"type": "Microsoft.Network/networkSecurityGroups",
 			"name": "[variables('nsgVar')]",
 			"location": "[parameters('location')]",
@@ -292,7 +292,7 @@
 			}
 		},
 		{
-			"apiVersion": "2016-06-01",
+			"apiVersion": "2017-03-30",
 			"copy": {
 				"name": "nicloop",
 				"count": "[if(equals(parameters('networkInterfaceType'),bool('false')),1, 2)]"
@@ -354,11 +354,6 @@
 						"version": "latest"
 					},
 					"osDisk": {
-						"name": "[variables('osDiskName')]",
-						"vhd": {
-							"uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName')), '2016-01-01').primaryEndpoints.blob, 'vhds/', variables('osDiskName'), '.vhd')]"
-						},
-						"caching": "ReadWrite",
 						"createOption": "FromImage"
 					}
 				},
