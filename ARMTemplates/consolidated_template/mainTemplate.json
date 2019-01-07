@@ -176,7 +176,7 @@
 		"osDiskName": "[concat(parameters('vmName'), '-', 'wafosdisk', '-', uniquestring(parameters('vmName')))]"
 	},
 	"resources": [{
-			"apiVersion": "2017-03-30",
+			"apiVersion": "2018-07-01",
 			"type": "Microsoft.Storage/storageAccounts",
 			"name": "[parameters('storageAccountName')]",
 			"location": "[parameters('location')]",
@@ -237,7 +237,7 @@
 			}
 		},
 		{
-			"apiVersion": "2017-03-30",
+			"apiVersion": "2018-12-01",
 			"type": "Microsoft.Network/networkSecurityGroups",
 			"name": "[variables('nsgVar')]",
 			"location": "[parameters('location')]",
