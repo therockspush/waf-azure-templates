@@ -191,7 +191,7 @@
 			}
 		},
 		{
-			"apiVersion": "2017-03-30",
+			"apiVersion": "2018-12-01",
 			"type": "Microsoft.Network/virtualNetworks",
 			"name": "[variables('vNETName')]",
 			"location": "[parameters('location')]",
